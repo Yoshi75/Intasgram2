@@ -1,0 +1,2 @@
+module InstamsHelper
+end

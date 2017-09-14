@@ -1,0 +1,11 @@
+<p><%= notice %></p>
+
+<h1>画像一覧</h1>
+
+<% @instams.each do |instam| %>
+  <p>本文(仮):<%= instam.content %></p>
+  <%= link_to "画像を編集する", edit_instam_path(instam.id) , data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to '画像を削除する', instam_path(instam.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+<% end %>
+
+<%= link_to "画像を投稿する", new_instam_path %>

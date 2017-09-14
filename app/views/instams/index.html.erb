@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+　　<h1>画像一覧</h1>
+    <%= link_to "画像を投稿する", new_instam_path ,class: 'btn btn-default' %>
+    <% @instams.each do |instam| %>
+    <div class="row">
+      <p>本文(仮):<%= instam.content %></p>
+      <%= link_to "編集", edit_instam_path(instam.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-sm btn-success' %>
+      <%= link_to '削除', instam_path(instam.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<%= form_for(@instam) do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "一覧へ戻る", instam_path %>
+
+<%= link_to "画像を投稿する", new_instam_path %>
