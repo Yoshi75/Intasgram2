@@ -34,6 +34,20 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+  </div>
+
+  <!-- 名前入力用のフィールドを追加 -->
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
 <% end %>
 
 <h3>Cancel my account</h3>

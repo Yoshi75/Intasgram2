@@ -12,6 +12,7 @@ class InstamsController < ApplicationController
 
   def create
     @instam = Instam.create(instams_params)
+    @instam.user_id = current_user.id
     if @instam.save
        redirect_to instams_path, notice: "画像を投稿しました！"
        NoticeMailer.sendmail_instam(@instam).deliver

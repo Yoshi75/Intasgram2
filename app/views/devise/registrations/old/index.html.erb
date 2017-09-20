@@ -6,8 +6,7 @@
     <% @instams.each do |instam| %>
     <div class="row">
       <p>本文(仮):<%= instam.content %></p>
-      <p><%= instam.user.name %></p>
-      <p><%= profile_img(instam.user) %></p>
+ 
       <%= link_to "編集", edit_instam_path(instam.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-sm btn-success' %>
       <%= link_to '削除', instam_path(instam.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
     </div>
