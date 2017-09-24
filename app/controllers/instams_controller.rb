@@ -23,13 +23,22 @@ class InstamsController < ApplicationController
   
   def edit
      @instam = Instam.find(params[:id])   
-     redirect_to instams_path, notice: "画像を編集しました！"
+#     redirect_to instams_path, notice: "画像を編集しました！"
   end 
   
+#  def update
+#    @instam = Instam.find(params[:id])   
+#    @instam.update(instams_params)
+#  end 
+
   def update
-    @instam = Instam.find(params[:id])   
-    @instam.update(instams_params)
-  end 
+   @instam = Instam.find(params[:id])
+   if @instam.update(instams_params)
+     redirect_to instams_path, notice:"画像を更新しました!"
+   else
+     render action: 'edit'
+   end
+  end
 
   def destroy
     @instam = Instam.find(params[:id])   
