@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header {
   width: 100%;
-  background-color: #e0ffff;
+  background-color: #0000FF;
   height: 54px;
 }
 
@@ -16,7 +16,7 @@ header ul a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: black;
+   color: white;
 }
 
 header li {
@@ -29,7 +29,28 @@ header ul:after {
   display: block;
   clear: both;
 }
+
 .flash {
-  color: white;
+  color: black;
   padding-top: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color:#0000FF;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+.main-header {
+  padding-bottom: 15%;
+  width: 100%;
+  background-size: cover;
+  background-image:  url("header.jpg");
+  background-attachment: fixed;
 }

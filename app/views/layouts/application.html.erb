@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>インスタグラムのようなもの</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <p class="flash"><%= notice %><%= alert %></p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,6 +15,7 @@
      <% if user_signed_in? %>
        <li><%= link_to "投稿", instams_path %></li>
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
      <% else %>
        <li><%= link_to 'ログイン', new_user_session_path  %></li>
        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
@@ -22,6 +24,11 @@
   </header>
 
 <%= yield %>
+
+<footer>
+  <p>インスタグラム風アプリ</p>
+  <p>© 2017 Yoshimi Kosugi</p>
+</footer>
 
 </body>
 </html>
