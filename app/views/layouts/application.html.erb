@@ -12,14 +12,18 @@
 
   <header>
    <ul>
-     <% if user_signed_in? %>
-       <li><%= link_to "投稿", instams_path %></li>
-       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-     <% else %>
-       <li><%= link_to 'ログイン', new_user_session_path  %></li>
-       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-     <% end %>
+    <div class="container">
+      <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+       <% if user_signed_in? %>
+         <li><%= link_to "投稿", instams_path %></li>
+         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+         <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+       <% else %>
+         <li><%= link_to 'ログイン', new_user_session_path  %></li>
+         <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+       <% end %>
+      </div>
+     </div> 
    </ul>
   </header>
 
